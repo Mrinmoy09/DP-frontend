@@ -10,6 +10,7 @@ const NavBar = () => {
 
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     };
 
     const menuItems = <>
@@ -36,8 +37,8 @@ const NavBar = () => {
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">Doctors Portal</a>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal">
+            <div className="navbar-center hidden lg:flex lg:ml-10">
+                <ul className="menu menu-horizontal px-5">
                     {menuItems}
                 </ul>
             </div>
