@@ -25,7 +25,7 @@ const Users = () => {
                             <th></th>
                             <th>Email</th>
                             <th>Make Admin</th>
-                            <th>Remove User</th>
+                            <th>Set as a Doctor</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -3,12 +3,47 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import {useQuery, useMutation } from 'react-query';
+import Loading from '../Shared/Loading';
+import { toast } from 'react-toastify';
+
 
 const MyAppointments = () => {
 
+    const [isDeleted,setIsDeleted]= useState(null)
     const [appointments, setAppointments] = useState([]);
     const [user] = useAuthState(auth);
     const navigate = useNavigate()
+
+   const {refetch} = useQuery();
+    
+    const { isLoading} = useMutation(handleDelete);
+
+    async function handleDelete(id) {
+         await fetch(`http://localhost:5000/booking/${id}`,{
+            method:'DELETE',
+            headers:{
+                    'content-type':'application/json'
+                }
+            })
+            .then(res => res.json())
+            .then(result => {
+                if(result.acknowledged){
+                    setIsDeleted(true);
+                    alert('Are you sure you want to cancel this Booking?')
+                    
+                   
+                    toast('Your appointment is canceled.')
+                }
+                else{
+                    setIsDeleted(false);
+                }
+            })
+            
+        
+    }
+
+    
 
     useEffect(() => {
         if (user) {
@@ -28,11 +63,42 @@ const MyAppointments = () => {
                     return res.json()
                 })
                 .then(data => {
-
+                    
                     setAppointments(data);
+                    
                 });
         }
-    }, [user])
+    }, [user,isDeleted])
+
+    if(isDeleted){
+        refetch();
+    }
+
+    if(isLoading){
+        return <Loading></Loading>
+    }
+
+    
+
+    
+    // const handleDelete = async (id) => {
+      
+    //     await fetch(`http://localhost:5000/booking/${id}`,{
+    //         method:'DELETE',
+    //         headers:{
+    //             'content-type':'application/json'
+    //         }
+    //     })
+    //     .then(res=>res.json())
+    //         .then(result=>{
+              
+            
+    //         alert('Are you sure you want to cancel this Booking?');
+    //         toast('Your appointment is canceled.')
+    // }
+        
+  
+
 
     return (
         <div>
@@ -46,6 +112,7 @@ const MyAppointments = () => {
                             <th>Date</th>
                             <th>Time</th>
                             <th>Treatment</th>
+                            <th>Cancel</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,6 +123,7 @@ const MyAppointments = () => {
                                 <td>{a.date}</td>
                                 <td>{a.slot}</td>
                                 <td>{a.treatment}</td>
+                                <td><button onClick={()=>handleDelete(a._id)} class="btn btn-xs">Cancel Appointment</button></td>
                             </tr>)
                         }
                         

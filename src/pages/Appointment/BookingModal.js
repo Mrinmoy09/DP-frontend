@@ -18,7 +18,8 @@ const BookingModal = ({treatment,date,setTreatment,refetch}) => {
             slot,
             patient:user.email,
             patientName: user.displayName,
-            phone: event.target.phone.value
+            phone: event.target.phone.value,
+            status:'Pending'
         }
 
         fetch('http://localhost:5000/booking' , {
@@ -30,9 +31,9 @@ const BookingModal = ({treatment,date,setTreatment,refetch}) => {
         })
         .then(res => res.json())
         .then(data => {
-
             if(data.success){
                 toast(`Appointment is set , ${formettedDate} at ${slot}`)
+                
             }
             else{
                 toast.error(`You already have an appointment on, ${data.booking?.date} at ${data.booking?.slot}`)
