@@ -8,7 +8,7 @@ import useDoctor from '../../hooks/useDoctor';
 const Dashboard = () => {
   const [user]= useAuthState(auth)
   const [admin] = useAdmin(user)
-  const [doctor] = useDoctor(user)
+  const [doctor] = useDoctor(user);
     return (
         <div class="drawer drawer-mobile">
   <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
@@ -31,6 +31,7 @@ const Dashboard = () => {
       {
         doctor && <li><Link to="/dashboard/allBooking">All Appointments</Link></li>
       }
+      
       
       
     </ul>

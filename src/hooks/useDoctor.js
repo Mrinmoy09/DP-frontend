@@ -4,9 +4,9 @@ const useDoctor = user => {
     const [doctor, setDoctor] = useState(false);
     const [doctorLoading, setDoctorLoading] = useState(true);
     useEffect( () =>{
-        const role = user?.email;
-        if(role){
-            fetch(`http://localhost:5000/doctor/${role}`, {
+        const email = user?.email;
+        if(email){
+            fetch(`http://localhost:5000/doctor/${email}`, {
                 method:'GET',
                 headers: {
                     'content-type': 'application/json',
@@ -15,7 +15,8 @@ const useDoctor = user => {
             })
             .then(res=>res.json())
             .then(data => {
-                setDoctor(data.role);
+                console.log(data);
+                setDoctor(data.doctor);
                 setDoctorLoading(false);
             })
         }
