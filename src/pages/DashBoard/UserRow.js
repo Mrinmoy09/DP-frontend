@@ -1,11 +1,10 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const UserRow = ({ user, refetch ,index }) => {
 
-    const { email, role } = user;
+    const {_id, email, role } = user;
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
@@ -21,13 +20,14 @@ const UserRow = ({ user, refetch ,index }) => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     refetch();
+                    
                     toast.success(`Successfully made an admin`);
                 }
 
             })
     }
     const makeDoctor = () => {
-        fetch(`http://localhost:5000/doctor/${email}`, {
+        fetch(`http://localhost:5000/user/${_id}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -56,7 +56,7 @@ const UserRow = ({ user, refetch ,index }) => {
             
             <td>{role !== 'admin' ? <><button onClick={makeAdmin} class="btn btn-xs">Make Admin</button></> 
             : <h2 className='text-xl font-bold text-purple-600'>An Admin</h2>}</td>
-            <td><button onClick={makeDoctor} class="btn btn-xs">Set as a Doctor</button> 
+            <td><button onClick={makeDoctor} class="btn btn-xs">Set as a Doctor</button>
             </td>
         </tr>
     );
