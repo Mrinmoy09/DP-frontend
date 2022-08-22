@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+Dental's' Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Description:
 
-## Available Scripts
+Dental is one of the most common issues for a person’s life. If anybody wants to visit a dentist for service or checkup, he or she needs to visit the hospital and have to find out if space/services are available or not. The patient also waits in a queue while getting an appointment.He/She also doesn’t know which time they should visit.Vision of this project is to create a doctor patient handling management system that will help patients to book doctor appointments and fulfill their prospects.
 
-In the project directory, you can run:
+admin role:
 
-### `npm start`
+email:[admin@admin.com](mailto:admin@admin.com)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+password:123456
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+doctor role:
 
-### `npm test`
+doctor@xyz.com
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+password:123456
 
-### `npm run build`
+### Technologies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Front-end:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* React
+* React router
+* React day picker
+* React hook form
+* React toastify
+* React query
+* Tailwind CSS
+* Firebase
+* date-fns
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Back-end:
 
-### `npm run eject`
+* Node js
+* JWT
+* Express js
+* MongoDB
+* Node mailer
+* Cors
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Users:![1661191885954](image/README/1661191885954.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Admin Activity:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![1661191978173](image/README/1661191978173.png)
 
-## Learn More
+Doctors Activity:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![1661192029556](image/README/1661192029556.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Client side code: [https://github.com/Mrinmoy09/DP-frontend]()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Server-side code: [https://github.com/Mrinmoy09/DP-backend]()
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Live site: [hhttps://dental-portal-7153d.web.app/](https://doctors-portal-b19c5.web.app/)
