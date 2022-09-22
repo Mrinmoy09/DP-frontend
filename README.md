@@ -41,7 +41,6 @@ Back-end:
 
 Users:![1661191885954](image/README/1661191885954.png)
 
-
 Admin Activity:
 
 ![1661191978173](image/README/1661191978173.png)
@@ -49,7 +48,6 @@ Admin Activity:
 Doctors Activity:
 
 ![1661192029556](image/README/1661192029556.png)
-
 
 Client side code: [https://github.com/Mrinmoy09/DP-frontend]()
 
